@@ -1,0 +1,145 @@
+.board-wrap{
+  width: 70%;
+  margin: auto auto;
+  height:250px;
+}
+
+
+.board-year{
+  width: 100%;
+  height: 13%;
+  background: #2980b9;
+  color: #ECF0F1;
+  text-align: center; 
+  line-height: 200%;
+  font-weight: bold;
+}
+
+.board-month{
+  width: 100%;
+  height: 13%;
+  background: #bdc3c7;
+  color:#34495e;
+   text-align: center; 
+  line-height: 200%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+.board-weekday-bar{
+  width: 100%;
+  height: 12%;
+  border-bottom: thin dotted #bdc3c7;
+  text-align: center; 
+  font-style: italic;
+}
+
+.weekday-cell{
+  
+  height: 100%;
+  float: left;
+  width: 14.28%;
+  color:#34495e;
+  text-align: center; 
+}
+
+.date-cell{
+  height: 13.9%;
+  float: left;
+  width: 14.28%;
+  color:#34495e;
+  text-align: center; 
+  
+}
+
+
+.cell-content{
+  height: 100%;
+  width: 100%;
+  background-color: #ecf0f1;
+  line-height: 200%;
+}
+
+.date-cell .cell-content:hover {
+  background: #bdc3c7;   
+}
+
+
+.triangle-left-month {
+  float:left;
+  margin-top: 10px;
+  margin-left:5px;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-right: 20px solid #34495e;
+	border-bottom: 5px solid transparent;
+}
+
+.triangle-right-month {
+  float:right;
+  margin-top:10px;
+  margin-right: 5px;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 20px solid #34495e;
+	border-bottom: 5px solid transparent;
+}
+
+.triangle-left-year {
+  float:left;
+  margin-top: 10px;
+  margin-left:5px;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-right: 20px solid #ECF0F1;
+	border-bottom: 5px solid transparent;
+}
+
+.triangle-right-year {
+  float:right;
+  margin-top:10px;
+  margin-right: 5px;
+	width: 0;
+	height: 0;
+	border-top: 5px solid transparent;
+	border-left: 20px solid #ECF0F1;
+	border-bottom: 5px solid transparent;
+}
+
+.record-saved {
+  background: pink;
+}
+
+
+.cell-has-record{
+  background: red;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
