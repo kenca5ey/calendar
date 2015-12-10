@@ -110,12 +110,17 @@
 }
 
 .record-saved {
-  background: pink;
+  background: #F0E68C;
 }
 
 
 .cell-has-record{
-  background: red;
+  background: #F0E68C;
+}
+
+[contenteditable=true]:empty:before {
+  content: attr(class);
+  display: block; /* For Firefox 
 }
 
 

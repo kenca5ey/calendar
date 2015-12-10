@@ -113,12 +113,16 @@ var Board = (function() {
   };
 
   Board.prototype.removeCellIndicators = function() {
-    for (var i = 0; i < this.numCellsWithIndicator; i++) {
-      var cellIndex = this.cellsWithIndicator[i];
-      this.pool[cellIndex].content.classList.remove('record-saved');
+    for (var i = 0; i < 42; i++) {
+      // var cellIndex = this.cellsWithIndicator[i];
+      this.pool[i].content.classList.remove('record-saved');
     }
     this.numCellsWithIndicator = 0;
     this.cellsWithIndicator = [];
+  };
+
+  Board.prototype.removeCellIndicator = function(cellIndex) {
+         this.pool[cellIndex].content.classList.remove('record-saved'); 
   };
 
   return Board;

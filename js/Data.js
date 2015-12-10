@@ -13,10 +13,7 @@ var Data = (function() {
     this.savedRecords = {};
     this.numSavedRecords = 0;
 
-
-    this.init();
-
-   
+    this.init();  
   };
 
 
@@ -92,7 +89,8 @@ var Data = (function() {
         "year": this.lastMonthsYear,
         "cellIndex": j,
         "recordExists": false,
-        "color": "#34495e"
+        "color": "#34495e",
+        "eventText": ""
       };
       
       if ((this.lastMonthsYear.toString() + this.lastMonth.toString() + (this.daysInLastMonth - this.lastDayOfLastMonth + i + 1).toString()) in this.savedRecords) {
@@ -107,7 +105,8 @@ var Data = (function() {
         "year": this.year,
         "cellIndex": j,
         "recordExists": false,
-        "color": "#3498db"
+        "color": "#3498db",
+        "eventText": ""
       };
       
       if ((this.year.toString() + this.month.toString() + (i + 1).toString()) in this.savedRecords) {
@@ -123,7 +122,8 @@ var Data = (function() {
           "year": this.nextMonthsYear,
         "cellIndex": j,
         "recordExists": false,
-        "color": "#34495e"
+        "color": "#34495e",
+        "eventText": ""
       };
        if ((this.nextMonthsYear.toString() + this.nextMonth.toString() + (i + 1).toString()) in this.savedRecords) {
         this.visibleDates[j].recordExists = true;
@@ -151,11 +151,18 @@ var Data = (function() {
     }
   };
 
-  Data.prototype.addSavedRecord = function(record) {
+  Data.prototype.addSavedRecord = function(record, eventText) {
     if (!this.savedRecords[record.year.toString() + record.month.toString() + record.date.toString()]) this.savedRecords[record.year.toString() + record.month.toString() + record.date.toString()] = {};
+    record.eventText = eventText;
     this.savedRecords[record.year.toString() + record.month.toString() + record.date.toString()] = record;
     PubSub.trigger('recordadded', [record]);
     this.numSavedRecords += 1;
+  };
+
+  Data.prototype.removeSavedRecord = function(key) {
+    if (this.savedRecords[key]){
+      delete this.savedRecords[key];
+    }
   };
 
 
